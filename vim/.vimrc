@@ -11,6 +11,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'elzr/vim-json'
+Plugin 'tfnico/vim-gradle'
+Plugin 'kentaroi/cocoa.vim'
 
 Plugin 'tomasr/molokai'
 
