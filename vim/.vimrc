@@ -13,6 +13,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'elzr/vim-json'
 Plugin 'tfnico/vim-gradle'
 Plugin 'kentaroi/cocoa.vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'JessicaKMcIntosh/Vim'
 
 Plugin 'tomasr/molokai'
 
