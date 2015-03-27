@@ -1,3 +1,9 @@
+" 
+" STEP 1. Install Vundle ()
+" STEP 2. Copy the config file to your home folder
+" STEP 3. Execute command in shell: vim +PluginInstall +qa
+" 
+
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
