@@ -1,9 +1,3 @@
-" 
-" STEP 1. Install Vundle ()
-" STEP 2. Copy the config file to your home folder
-" STEP 3. Execute command in shell: vim +PluginInstall +qa
-" 
-
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,6 +15,7 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'kentaroi/cocoa.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'JessicaKMcIntosh/Vim'
+Plugin 'mileszs/ack.vim'
 
 Plugin 'tomasr/molokai'
 
@@ -94,4 +89,10 @@ set laststatus=2
 
 "FILETYPES {{{
 au BufRead,BufNewFile Podfile set filetype=ruby
+" }}}
+
+" SilverSearcher Integrationb {{{
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 " }}}
