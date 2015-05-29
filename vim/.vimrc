@@ -89,7 +89,11 @@ set laststatus=2
 
 "FILETYPES {{{
 au BufRead,BufNewFile Podfile set filetype=ruby
-" }}}
+"}}}
+
+"Filetype specific rules {{{
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
+"}}}
 
 " SilverSearcher Integrationb {{{
 if executable('ag')
