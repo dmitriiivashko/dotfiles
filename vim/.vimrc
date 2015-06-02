@@ -8,8 +8,13 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" NeoBundle 'jiangmiao/auto-pairs'
+" NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
@@ -18,16 +23,20 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'tfnico/vim-gradle'
 NeoBundle 'kentaroi/cocoa.vim'
-NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-commentary'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'Chiel92/vim-autoformat'
 
 call neobundle#end()
 NeoBundleCheck
@@ -43,7 +52,6 @@ filetype plugin indent on
 " let mapleader = ","
 let mapleader = "\<Space>"
 syntax enable
-
 
 " Normal mode mappings {{{
 nnoremap <leader>w :w<CR>
@@ -155,6 +163,14 @@ nmap ga <Plug>(EasyAlign)
 " vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
 "     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 " omap s :normal vs<CR>
+" }}}
+
+" Rainbow parentheses {{{
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
 " }}}
 
 if has("gui_macvim")
