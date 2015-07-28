@@ -57,7 +57,6 @@ function glol; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cre
 function glola; git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all; end;
 function glog; git log --oneline --decorate --color --graph; end;
 
-function gm; git merge; end;
 function gmom; git merge origin/master; end;
 function gmt; git mergetool --no-prompt; end;
 function gmtvim; git mergetool --no-prompt --tool=vimdiff; end;
