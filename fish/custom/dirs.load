@@ -1,14 +1,14 @@
-alias cd..='cd ..'
-alias cd...='cd ../..'
-alias cd....='cd ../../..'
-alias cd.....='cd ../../../..'
-alias cd......='cd ../../../../..'
+function cd..; cd ..; end;
+function cd...; cd ../..; end;
+function cd....; cd ../../..; end;
+function cd.....; cd ../../../..; end;
+function cd......; cd ../../../../..; end;
 
-alias lsa='ls -lah'
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
+function lsa; ls -lah; end;
+function l; ls -lah; end;
+function ll; ls -lh; end;
+function la; ls -lAh; end;
 
-alias md='mkdir -p'
-alias rd=rmdir
-alias d='dirs -v | head -10'
+function md; mkdir -p; end;
+function rd; rmdir; end;
+function d; dirs -v | head -10; end;
