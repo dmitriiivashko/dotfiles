@@ -128,7 +128,8 @@ au BufRead,BufNewFile Podfile set filetype=ruby
 "}}}
 
 "Filetype specific rules {{{
-autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab omnifunc=tern#Complete
+let g:vim_json_syntax_conceal = 0
 "}}}
 
 " SilverSearcher Integration {{{
