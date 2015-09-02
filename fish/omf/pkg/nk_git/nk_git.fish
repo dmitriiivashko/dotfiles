@@ -109,3 +109,4 @@ function gup; git pull --rebase; end;
 function gupv; git pull --rebase -v; end;
 
 function gvt; git verify-tag; end;
+
