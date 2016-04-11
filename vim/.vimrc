@@ -49,8 +49,8 @@ NeoBundleCheck
 
 filetype plugin indent on
 
-" let mapleader = ","
-let mapleader = "\<Space>"
+let mapleader = ","
+" let mapleader = "\<Space>"
 syntax enable
 
 " Normal mode mappings {{{
@@ -59,7 +59,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader><cr> :noh<CR>
 nnoremap <leader>l :ls<CR>:b
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>, :NERDTreeToggle<CR>
+nnoremap <leader>m :NERDTreeToggle<CR>
 nnoremap <leader>o :CtrlP<CR>
 nnoremap n nzz
 nnoremap N Nzz
