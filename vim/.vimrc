@@ -1,45 +1,34 @@
-if 0 | endif
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
 
-" NeoBundle 'jiangmiao/auto-pairs'
-" NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'tfnico/vim-gradle'
-NeoBundle 'kentaroi/cocoa.vim'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'Chiel92/vim-autoformat'
+Plug 'scrooloose/syntastic'
+Plug 'tomasr/molokai'
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tcomment_vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'elzr/vim-json'
+Plug 'tfnico/vim-gradle'
+Plug 'kentaroi/cocoa.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'mileszs/ack.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'terryma/vim-expand-region'
+Plug 'marijnh/tern_for_vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/vim-easy-align'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Chiel92/vim-autoformat'
 
-call neobundle#end()
-NeoBundleCheck
+call plug#end()
 
 "set nocompatible
 "filetype off
