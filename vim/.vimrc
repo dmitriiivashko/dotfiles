@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdtree'
@@ -89,7 +91,7 @@ set shell=/bin/bash
 set showmatch
 set smartcase
 set smartindent
-set ts=4 sts=4 sw=4 expandtab
+set ts=2 sts=2 sw=2 expandtab
 set visualbell
 set winheight=3
 set winminheight=3
