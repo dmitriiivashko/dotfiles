@@ -110,7 +110,7 @@ let g:airline#extensions#tabline#enabled = 1
 " }}}
 
 " SEARCH HIGHLIGHTING {{{
-set nohlsearch
+" set nohlsearch
 nnoremap <F3> :set hlsearch!<CR>
 " }}}
 
