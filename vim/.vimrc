@@ -1,11 +1,13 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'chrisbra/vim-commentary'
+Plug 'easymotion/vim-easymotion'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdtree'
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
