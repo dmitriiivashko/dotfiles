@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'chrisbra/vim-commentary'
+Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'scrooloose/nerdcommenter'
