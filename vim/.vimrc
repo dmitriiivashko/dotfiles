@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'chrisbra/vim-commentary'
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
+Plug 'pangloss/vim-javascript'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
@@ -84,7 +85,7 @@ set backspace=indent,eol,start
 set cursorline
 set encoding=utf-8
 set fileencoding=utf-8
-" set hlsearch
+set hlsearch
 set ignorecase
 set incsearch
 "set list
