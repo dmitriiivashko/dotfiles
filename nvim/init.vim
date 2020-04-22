@@ -7,9 +7,10 @@ Plug 'tpope/vim-surround'
 
 if exists('g:vscode')
 else
-Plug 'Raimondi/delimitMate'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'Raimondi/delimitMate'
+  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 endif
 
 call plug#end()
@@ -47,16 +48,18 @@ let g:sneak#use_ic_scs = 1
 colorscheme tokyo-metro
 
 if !exists('g:vscode')
-"UI {{{
-let g:airline_powerline_fonts = 1
-" let g:airline_right_sep='◀'
-" let g:airline_left_sep='▶'
-set laststatus=2
-" let g:airline#extensions#tabline#left_sep = ''
-" let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='minimalist'
-" }}}
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+  "UI {{{
+  let g:airline_powerline_fonts = 1
+  " let g:airline_right_sep='◀'
+  " let g:airline_left_sep='▶'
+  set laststatus=2
+  " let g:airline#extensions#tabline#left_sep = ''
+  " let g:airline#extensions#tabline#left_alt_sep = ''
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_theme='minimalist'
+  " }}}
+  nnoremap <C-N> :bnext<CR>
+  nnoremap <C-P> :bprev<CR>
+
+  source ./coc.vim
 endif
