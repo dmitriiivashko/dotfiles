@@ -61,5 +61,5 @@ if !exists('g:vscode')
   nnoremap <C-N> :bnext<CR>
   nnoremap <C-P> :bprev<CR>
 
-  source ./coc.vim
+  source ~/.config/nvim/coc.vim
 endif
