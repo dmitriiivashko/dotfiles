@@ -4,12 +4,12 @@ Plug 'chrisbra/vim-commentary'
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
 Plug 'pangloss/vim-javascript'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'scrooloose/nerdcommenter'
+" " Plug 'jiangmiao/auto-pairs'
+" " Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdtree'
-" Plug 'tomtom/tcomment_vim'
+" " Plug 'tomtom/tcomment_vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
@@ -91,6 +91,7 @@ set incsearch
 "set list
 set noswapfile
 set number
+set relativenumber
 set shell=/bin/bash
 set showmatch
 set smartcase
