@@ -1,9 +1,11 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'koirand/tokyo-metro.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
 
 if exists('g:vscode')
 else
@@ -44,6 +46,8 @@ nnoremap <leader>d :bd<CR>
 
 let g:NERDSpaceDelims = 1
 let g:sneak#use_ic_scs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCompactSexyComs = 1
 
 colorscheme tokyo-metro
 
@@ -60,6 +64,11 @@ if !exists('g:vscode')
   " }}}
   nnoremap <C-N> :bnext<CR>
   nnoremap <C-P> :bprev<CR>
+
+  nnoremap n nzz
+  nnoremap N Nzz
+  nnoremap <leader>m :NERDTreeToggle<CR>
+  nnoremap <leader>o :CtrlP<CR>
 
   source ~/.config/nvim/coc.vim
 endif
