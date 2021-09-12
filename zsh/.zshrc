@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # PROMPT
 BULLETTRAIN_PROMPT_ORDER=(
     status
@@ -5,6 +7,7 @@ BULLETTRAIN_PROMPT_ORDER=(
     git
 )
 BULLETTRAIN_TIME_SHOW=false
+SPACESHIP_GRADLE_SHOW=false
 BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 BULLETTRAIN_PROMPT_CHAR=''
@@ -58,13 +61,14 @@ antigen use oh-my-zsh
 
 # PLUGINS
 antigen bundle git
-antigen bundle thefuck
+#antigen bundle thefuck
 antigen bundle git-flow
 antigen bundle z
 antigen bundle brew
 antigen bundle sublime
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle kubectl
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
@@ -82,10 +86,6 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # ALIASES
-alias redisup='redis-server /usr/local/etc/redis.conf'
-alias redisdown='redis-cli shutdown'
-alias mysqlup='mysql.server start'
-alias mysqldown='mysql.server stop'
 alias imshop-env='brew services run postgresql@10; brew services run rabbitmq; brew services run redis; brew services run elasticsearch-full; brew services run kibana-full'
 
 # GO
@@ -95,25 +95,14 @@ export PATH="$PATH:$GOPATH/bin"
 # VARS
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 export TERM=xterm-256color
-#export TERM=
-
-# Ruby
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-#export PATH="/usr/local/opt/ruby/bin:$PATH"
-#export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
-
-# export OPENCV_INCLUDE_DIR="/usr/local/Cellar/opencv/3.4.3/include"
-# export OPENCV_LIB_DIR="/usr/local/Cellar/opencv/3.4.3/lib"
-# export OPENCV_BIN_DIR="OPENCV_BIN_DIR"
 
 # Postgres
-export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@10/bin:$PATH"
 
-# Android
+# DIRENV
 eval "$(direnv hook zsh)"
 
+# Android
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -123,3 +112,18 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 alias idea='open . -na "IntelliJ IDEA.app"'
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+#export PATH=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin:$PATH
+
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '/Users/dmitriiivashko/yandex-cloud/path.bash.inc' ]; then source '/Users/dmitriiivashko/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/dmitriiivashko/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dmitriiivashko/yandex-cloud/completion.zsh.inc'; fi
+
+# KUBERNETES
+alias kac='source <(/usr/local/bin/kubectl completion zsh)'
+alias kgpns='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces'
