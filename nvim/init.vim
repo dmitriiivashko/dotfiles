@@ -6,6 +6,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+Plug 'easymotion/vim-easymotion'
 
 if exists('g:vscode')
 else
@@ -72,3 +73,4 @@ if !exists('g:vscode')
 
   source ~/.config/nvim/coc.vim
 endif
+
