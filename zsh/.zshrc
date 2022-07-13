@@ -116,8 +116,8 @@ alias idea='open . -na "IntelliJ IDEA.app"'
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 export PATH=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin:$PATH
 
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+#source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+#source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # The next line updates PATH for Yandex Cloud CLI.
 if [ -f '/Users/dmitriiivashko/yandex-cloud/path.bash.inc' ]; then source '/Users/dmitriiivashko/yandex-cloud/path.bash.inc'; fi
@@ -128,3 +128,14 @@ if [ -f '/Users/dmitriiivashko/yandex-cloud/completion.zsh.inc' ]; then source '
 # KUBERNETES
 alias kac='source <(/usr/local/bin/kubectl completion zsh)'
 alias kgpns='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces'
+
+export PATH="/opt/homebrew/opt/helm@2/bin:$PATH"
+
+# RUBY
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+
+# MYSQL
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
