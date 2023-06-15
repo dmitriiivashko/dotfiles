@@ -113,8 +113,10 @@ alias idea='open . -na "IntelliJ IDEA.app"'
 
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
 #export PATH=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home/bin:$PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
-export PATH=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin:$PATH
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+#export PATH=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home
+export PATH=/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home/bin:$PATH
 
 #source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 #source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
@@ -132,10 +134,43 @@ alias kgpns='kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.statu
 export PATH="/opt/homebrew/opt/helm@2/bin:$PATH"
 
 # RUBY
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export LDFLAGS="-L/opt/homebrew/opt/ruby@3.1/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby@3.1/include"
 
 # MYSQL
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+export NPM_CONFIG_GITHUB_TOKEN=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
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
+# RUST
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
