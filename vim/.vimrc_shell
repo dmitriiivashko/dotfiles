@@ -1,4 +1,0 @@
-let g:rehash256 = 1
-set term=screen-256color
-colorscheme molokai
-let g:airline_theme='dark'
