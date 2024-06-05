@@ -35,7 +35,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # GO
-export GOPATH=/Users/dmitriiivashko/Projects/Go
+export GOPATH=$HOME/Projects/Go
 export PATH="$PATH:$GOPATH/bin"
 
 # VARS
@@ -56,8 +56,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export PATH=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home/bin:$PATH
 
 # YANDEX CLI
-if [ -f '/Users/dmitriiivashko/yandex-cloud/path.bash.inc' ]; then source '/Users/dmitriiivashko/yandex-cloud/path.bash.inc'; fi
-if [ -f '/Users/dmitriiivashko/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dmitriiivashko/yandex-cloud/completion.zsh.inc'; fi
+if [ -f "$HOME/yandex-cloud/path.bash.inc" ]; then source "$HOME/yandex-cloud/path.bash.inc"; fi
+if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
 
 # RUBY
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
